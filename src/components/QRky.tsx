@@ -8,8 +8,7 @@ import { Slider } from '@/components/ui/slider';
 import { Textarea } from '@/components/ui/textarea';
 import { Badge } from '@/components/ui/badge';
 import { toast } from '@/hooks/use-toast';
-import { 
-  QrCode, 
+import {
   Download, 
   Upload, 
   Palette, 
@@ -32,7 +31,6 @@ import QRCodeDecoder from './QRCodeDecoder';
 import ColorPicker from './ColorPicker';
 import LogoUploader from './LogoUploader';
 import BackgroundCustomizer from './BackgroundCustomizer';
-import StyleCustomizer from './StyleCustomizer';
 import WCAGAnalyzer from './WCAGAnalyzer';
 import FooterCopyright from './FooterCopyright';
 
@@ -405,12 +403,6 @@ const QRky: React.FC = () => {
                     </TabsContent>
                     <TabsContent value="background" className="space-y-6 mt-0">
                       <BackgroundCustomizer 
-                        config={config}
-                        onUpdateConfig={updateConfig}
-                      />
-                    </TabsContent>
-                    <TabsContent value="style" className="space-y-6 mt-0">
-                      <StyleCustomizer 
                         config={config}
                         onUpdateConfig={updateConfig}
                       />
