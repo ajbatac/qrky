@@ -60,8 +60,9 @@ const WCAGAnalyzer: React.FC<WCAGAnalyzerProps> = ({ config }) => {
         <CardTitle className="flex items-center gap-2">
           <AlertTriangle className="w-6 h-6 text-purple-600" />
           <span className="text-xl font-bold bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">
-            Accessibility
+            Accessibility Check
           </span>
+          <div className='text-sm text-gray-500'>Can it be read properly by all users?</div>
         </CardTitle>
       </CardHeader>
       <CardContent className="space-y-4">

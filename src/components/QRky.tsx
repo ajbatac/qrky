@@ -9,8 +9,7 @@ import { Textarea } from '@/components/ui/textarea';
 import { Badge } from '@/components/ui/badge';
 import { toast } from '@/hooks/use-toast';
 import {
-  Download, 
-  Upload, 
+  Download,
   Palette, 
   Image, 
   Settings, 
@@ -30,7 +29,6 @@ import QRCodeGenerator from './QRCodeGenerator';
 import QRCodeDecoder from './QRCodeDecoder';
 import ColorPicker from './ColorPicker';
 import LogoUploader from './LogoUploader';
-import BackgroundCustomizer from './BackgroundCustomizer';
 import WCAGAnalyzer from './WCAGAnalyzer';
 import FooterCopyright from './FooterCopyright';
 
@@ -63,7 +61,7 @@ const QRky: React.FC = () => {
   const [dataType, setDataType] = useState('url');
 
   const [config, setConfig] = useState<QRConfig>({
-    data: 'https://example.tld',
+    data: 'https://qrky.site',
     size: 300,
     errorCorrectionLevel: 'H',
     foregroundColor: '#000000',
@@ -120,7 +118,7 @@ const QRky: React.FC = () => {
       link.href = canvas.toDataURL();
       link.click();
       toast({
-        title: "Downloaded!",
+        title: "Downloaded successfully",
         description: "QR code saved to your device",
       });
     }
@@ -130,7 +128,7 @@ const QRky: React.FC = () => {
     try {
       await navigator.clipboard.writeText(config.data);
       toast({
-        title: "Copied!",
+        title: "Copied successfully",
         description: "QR code data copied to clipboard",
       });
     } catch (err) {
@@ -348,7 +346,7 @@ const QRky: React.FC = () => {
                 <div className="space-y-4">
                   <h2 className="text-xl font-bold flex items-center gap-2">
                     <Settings className="w-6 h-6 text-purple-600" />
-                    <span className="bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">Customization</span>
+                    <span className="bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">Customize your QR code</span>
                   </h2>
                   <Tabs value={customizationTab} onValueChange={setCustomizationTab} className="w-full">
                     <TabsList>
@@ -363,14 +361,6 @@ const QRky: React.FC = () => {
                       <TabsTrigger value="logo">
                         <Image className="w-4 h-4 mr-2" />
                         Logo
-                      </TabsTrigger>
-                      <TabsTrigger value="background">
-                        <Upload className="w-4 h-4 mr-2" />
-                        Background
-                      </TabsTrigger>
-                      <TabsTrigger value="style">
-                        <Sparkles className="w-4 h-4 mr-2" />
-                        Style
                       </TabsTrigger>
                     </TabsList>
                     <TabsContent value="colors" className="space-y-6 mt-0">
@@ -397,12 +387,6 @@ const QRky: React.FC = () => {
                     </TabsContent>
                     <TabsContent value="logo" className="space-y-6 mt-0">
                       <LogoUploader 
-                        config={config}
-                        onUpdateConfig={updateConfig}
-                      />
-                    </TabsContent>
-                    <TabsContent value="background" className="space-y-6 mt-0">
-                      <BackgroundCustomizer 
                         config={config}
                         onUpdateConfig={updateConfig}
                       />

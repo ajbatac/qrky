@@ -25,6 +25,7 @@ const LogoUploader: React.FC<LogoUploaderProps> = ({ config, onUpdateConfig }) =
     <div className="space-y-6 mt-8">
       <div className="space-y-3">
         <Label htmlFor="logo-upload" className="font-semibold text-base">Upload Logo</Label>
+        <div className='text-sm text-gray-500'>(make sure it's square, or it'll change aspect ratio)</div>
         <Input
           id="logo-upload"
           type="file"

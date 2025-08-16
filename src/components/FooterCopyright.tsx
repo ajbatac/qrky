@@ -2,7 +2,7 @@ import React from 'react';
 
 const FooterCopyright: React.FC = () => {
   return (
-    <footer className="text-center p-4 mt-24 text-gray-600">
+    <footer className="text-center p-4 text-gray-600">
       Created with ❤️ by{' '}
       <a
         href="https://ajbatac.github.io/?=QRky"
@@ -12,7 +12,7 @@ const FooterCopyright: React.FC = () => {
       >
         AJ Batac (@ajbatac)
       </a>{' '}
-      - v1.0.0 (
+      - v1.1.0 (
       <a
         href="/changelog.html"
         target="_top"
