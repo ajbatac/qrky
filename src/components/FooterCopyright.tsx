@@ -8,19 +8,29 @@ const FooterCopyright: React.FC = () => {
         href="https://ajbatac.github.io/?=QRky"
         target="_blank"
         rel="noopener noreferrer"
-        className="text-purple-600 hover:underline"
+        className="text-grey-100 hover:underline"
       >
         AJ Batac (@ajbatac)
       </a>{' '}
-      - v1.1.0 (
+      - v1.2 (
       <a
         href="/changelog.html"
         target="_top"
-        className="text-purple-600 hover:underline"
+        className="text-grey-100 hover:underline"
       >
         changelog
       </a>
       )
+      {' '}
+      -
+      {' '}
+      <a
+        href="https://github.com/ajbatac/qrky"
+        target="_top"
+        className="text-grey-100 hover:underline"
+      >
+      Open Source
+      </a>
     </footer>
   );
 };

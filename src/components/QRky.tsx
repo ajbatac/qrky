@@ -151,7 +151,7 @@ const QRky: React.FC = () => {
             <a href="/" className="flex items-center gap-3">
               <img src="/qrky-logo-small.png" alt="QRky Logo" className="w-14 h-14" />
             </a>
-            <h1 className="text-5xl font-bold text-foreground text-purple-500">
+            <h1 className="text-6xl py-7 font-extrabold bg-gradient-to-r from-purple-400 to-teal-300 bg-clip-text text-transparent">
               QRky
             </h1>
             <Sparkles className="w-7 h-7 text-primary" />
@@ -169,7 +169,7 @@ const QRky: React.FC = () => {
                 value="generate" 
                 className={`flex-1 flex items-center justify-center gap-3 h-16 px-8 rounded-full font-bold text-lg transition-all duration-200 border ${
                   activeTab === 'generate' 
-                    ? 'bg-primary text-primary-foreground' 
+                    ? 'bg-gradient-to-tr from-violet-100 via-purple-100 to-white-600' 
                     : 'bg-card text-card-foreground'
                 }`}
               >
@@ -180,7 +180,7 @@ const QRky: React.FC = () => {
                 value="decode" 
                 className={`flex-1 flex items-center justify-center gap-3 h-16 px-8 rounded-full font-bold text-lg transition-all duration-200 border ${
                   activeTab === 'decode' 
-                    ? 'bg-primary text-primary-foreground' 
+                    ? 'bg-gradient-to-tr from-green-100 via-teal-100 to-white-600' 
                     : 'bg-card text-card-foreground'
                 }`}
               >
@@ -195,7 +195,7 @@ const QRky: React.FC = () => {
             <div className="grid grid-cols-1 xl:grid-cols-3 gap-10">
               {/* Preview Section */}
               <div className="xl:col-span-1">
-                <div className="xl:sticky xl:top-4 xl:max-h-screen xl:overflow-y-auto custom-scrollbar min-h-[1000px]">
+                <div className="xl:sticky xl:top-4 xl:max-h-screen xl:overflow-y-auto custom-scrollbar min-h-[1200px]">
                 <Card className="elevated-card premium-card interactive-scale bounce-in">
                   <CardHeader className="pb-8">
                     <CardTitle className="flex items-center gap-2">
