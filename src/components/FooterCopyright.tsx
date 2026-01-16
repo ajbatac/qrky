@@ -12,10 +12,9 @@ const FooterCopyright: React.FC = () => {
       >
         AJ Batac (@ajbatac)
       </a>{' '}
-      - v1.2 (
+      - © 2026 - v2.0.0 (
       <a
-        href="/changelog.html"
-        target="_top"
+        href="/changelog"
         className="text-grey-100 hover:underline"
       >
         changelog
@@ -26,10 +25,11 @@ const FooterCopyright: React.FC = () => {
       {' '}
       <a
         href="https://github.com/ajbatac/qrky"
-        target="_top"
+        target="_blank"
+        rel="noopener noreferrer"
         className="text-grey-100 hover:underline"
       >
-      Open Source
+        Open Source
       </a>
     </footer>
   );

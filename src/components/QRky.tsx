@@ -192,19 +192,19 @@ const QRky: React.FC = () => {
 
           <div className="rounded-3xl p-8">
             <TabsContent value="generate" className="space-y-8 mt-0 slide-in-up">
-            <div className="grid grid-cols-1 xl:grid-cols-3 gap-10">
+            <div className="grid grid-cols-1 xl:grid-cols-3 gap-6 lg:gap-8 xl:gap-10">
               {/* Preview Section */}
               <div className="xl:col-span-1">
-                <div className="xl:sticky xl:top-4 xl:max-h-screen xl:overflow-y-auto custom-scrollbar min-h-[1200px]">
+                <div className="xl:sticky xl:top-4 xl:max-h-screen xl:overflow-y-auto custom-scrollbar">
                 <Card className="elevated-card premium-card interactive-scale bounce-in">
-                  <CardHeader className="pb-8">
+                  <CardHeader className="pb-6">
                     <CardTitle className="flex items-center gap-2">
                       <Camera className="w-6 h-6 text-purple-600" />
                       <span className="text-xl font-bold bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">Live Preview</span>
                     </CardTitle>
                   </CardHeader>
-                  <CardContent className="space-y-8">
-                    <div className="bg-gradient-to-br from-gray-50 via-white to-gray-100 rounded-2xl p-8 flex items-center justify-center border-3 border-slate-200 shadow-inner">
+                  <CardContent className="space-y-6">
+                    <div className="bg-gradient-to-br from-gray-50 via-white to-gray-100 rounded-2xl p-6 lg:p-8 flex items-center justify-center border border-slate-200 shadow-inner">
                       <QRCodeGenerator 
                         config={{ ...config, data: generateQRData() }}
                         onGenerate={() => {}}
@@ -221,14 +221,14 @@ const QRky: React.FC = () => {
                       </Button>
                       <Button 
                         variant="outline" 
-                        className="h-12 px-5 border-3 border-slate-300 shadow-lg button-subtle"
+                        className="h-12 px-5 border-2 border-slate-300 shadow-md button-subtle"
                         onClick={copyToClipboard}
                       >
                         <Copy className="w-5 h-5" />
                       </Button>
                     </div>
 
-                    <div className="text-sm text-gray-500 space-y-4 bg-gradient-to-r from-slate-50 via-white to-slate-100 rounded-2xl p-6 border-3 border-slate-200 shadow-inner">
+                    <div className="text-sm text-gray-500 space-y-4 bg-gradient-to-r from-slate-50 via-white to-slate-100 rounded-2xl p-6 border border-slate-200 shadow-inner">
                       <div className="flex justify-between">
                         <span className="font-medium">Size:</span>
                         <Badge variant="secondary" className="font-bold">{config.size}px</Badge>
@@ -245,7 +245,7 @@ const QRky: React.FC = () => {
                   </CardContent>
                 </Card>
 
-                <div className="mt-8">
+                <div className="mt-6 lg:mt-8">
                   {/* WCAG Accessibility Analysis */}
                   <WCAGAnalyzer config={config} />
                 </div>
@@ -253,17 +253,17 @@ const QRky: React.FC = () => {
               </div>
 
               {/* Configuration Section */}
-              <div className="xl:col-span-2 space-y-10">
+              <div className="xl:col-span-2 space-y-6 lg:space-y-8 xl:space-y-10">
                 {/* Data Input */}
                 <Card className="elevated-card premium-card card-subtle">
-                  <CardHeader className="pb-8">
+                  <CardHeader className="pb-6">
                     <CardTitle className="flex items-center gap-2">
                       <FileText className="w-6 h-6 text-purple-600" />
                       <span className="text-xl font-bold bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">QR Code Data</span>
                     </CardTitle>
                   </CardHeader>
-                  <CardContent className="space-y-8">
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                  <CardContent className="space-y-6">
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
                       <div className="space-y-2">
                         <Label htmlFor="data-type" className="text-base font-semibold">Data Type</Label>
                         <Select value={dataType} onValueChange={setDataType}>
@@ -380,7 +380,7 @@ const QRky: React.FC = () => {
                           step={10}
                           className="mt-4"
                         />
-                        <div className="text-sm text-gray-500 bg-gradient-to-r from-slate-50 via-white to-slate-100 rounded-xl p-4 border-3 border-slate-200 shadow-inner">
+                        <div className="text-sm text-gray-500 bg-gradient-to-r from-slate-50 via-white to-slate-100 rounded-xl p-4 border border-slate-200 shadow-inner">
                           <p className="font-medium">Recommended sizes: 300px for web, 600px for print</p>
                         </div>
                       </div>

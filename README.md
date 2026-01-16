@@ -11,6 +11,13 @@ QRky is a powerful web application for creating highly customizable QR codes. Wi
 - **WCAG Accessibility Analysis**: Ensure your QR code is accessible with a real-time contrast ratio checker.
 - **QR Code Decoder**: Upload an image to decode a QR code and see its contents.
 
+## 2026 Update (v2.0.0)
+
+The application has undergone a major visual overhaul and architecture update:
+- **Modernized UI**: Premium aesthetics with glassmorphism, smooth animations, and refined typography.
+- **Improved Responsiveness**: Fixed layout issues on narrow monitors and optimized mobile experience.
+- **Architecture**: Migrated to client-side routing for better navigation and performance.
+
 ## Project Structure
 
 The project is a standard Vite + React application with the following structure:
@@ -90,4 +97,4 @@ This project can be deployed to any static hosting service. For more advanced de
 
 ---
 
-Created with ❤️ by [AJ Batac (@ajbatac)](https://ajbatac.github.io/?=QRky) - v1.0.0 ([changelog](/public/changelog.html))
+Created with ❤️ by [AJ Batac (@ajbatac)](https://ajbatac.github.io/?=QRky) - v2.0.0 ([changelog](/changelog))
