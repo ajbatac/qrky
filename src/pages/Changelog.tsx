@@ -28,7 +28,7 @@ const Changelog: React.FC = () => {
                         href="/rss.xml"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-orange-100 text-orange-700 hover:bg-orange-200 transition-colors font-medium text-sm"
+                        className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-orange-100 dark:bg-orange-950/30 text-orange-700 dark:text-orange-400 hover:bg-orange-200 dark:hover:bg-orange-900/50 transition-colors font-medium text-sm border border-orange-200/50 dark:border-orange-500/20"
                     >
                         <span className="material-symbols-outlined text-sm">rss_feed</span>
                         Subscribe to feed
@@ -44,13 +44,13 @@ const Changelog: React.FC = () => {
                             <span className="material-symbols-outlined text-xs text-blue-600">new_releases</span>
                         </div>
 
-                        <Card className="elevated-card border-l-4 border-l-blue-500">
+                        <Card className="shadow-xl border-primary/10 bg-card hover:border-primary/20 transition-all duration-500 border-l-4 border-l-blue-500">
                             <CardHeader className="pb-4">
                                 <div className="flex flex-col md:flex-row md:items-center justify-between gap-2">
                                     <div className="space-y-1">
-                                        <CardTitle className="text-2xl font-bold flex items-center gap-3">
+                                        <CardTitle className="text-2xl font-bold text-foreground flex items-center gap-3">
                                             v2.5.0
-                                            <Badge variant="secondary" className="bg-blue-100 text-blue-700 hover:bg-blue-200">
+                                            <Badge variant="secondary" className="bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 hover:bg-blue-200">
                                                 UI & Documentation Polish
                                             </Badge>
                                         </CardTitle>
@@ -61,17 +61,17 @@ const Changelog: React.FC = () => {
                                 </div>
                             </CardHeader>
                             <CardContent className="space-y-6">
-                                <p className="text-gray-600 leading-relaxed font-normal">
+                                <p className="text-muted-foreground leading-relaxed font-normal">
                                     Continuing our commitment to visual excellence and transparency, this update introduces a more refined header layout, clearer feature visibility through badges, and expanded legal documentation. We've also polished the theme customization experience for a more premium feel.
                                 </p>
 
                                 <div className="grid gap-4 md:grid-cols-2">
                                     <div className="space-y-3">
-                                        <h3 className="font-semibold flex items-center gap-2 text-gray-900">
+                                        <h3 className="font-semibold flex items-center gap-2 text-foreground">
                                             <span className="material-symbols-outlined text-sm text-blue-500">design_services</span>
                                             UI & UX Refinement
                                         </h3>
-                                        <ul className="space-y-2 text-sm text-gray-600">
+                                        <ul className="space-y-2 text-sm text-muted-foreground">
                                             <li className="flex items-start gap-2">
                                                 <span className="block w-1.5 h-1.5 rounded-full bg-blue-400 mt-1.5" />
                                                 Horizontal header layout with a more natural information flow.
@@ -88,11 +88,11 @@ const Changelog: React.FC = () => {
                                     </div>
 
                                     <div className="space-y-3">
-                                        <h3 className="font-semibold flex items-center gap-2 text-gray-900">
+                                        <h3 className="font-semibold flex items-center gap-2 text-foreground">
                                             <span className="material-symbols-outlined text-sm text-green-500">verified</span>
                                             Trust & Transparency
                                         </h3>
-                                        <ul className="space-y-2 text-sm text-gray-600">
+                                        <ul className="space-y-2 text-sm text-muted-foreground">
                                             <li className="flex items-start gap-2">
                                                 <span className="block w-1.5 h-1.5 rounded-full bg-green-400 mt-1.5" />
                                                 Added comprehensive legal pages including UGC Disclaimer and DMCA Policy.
@@ -113,7 +113,7 @@ const Changelog: React.FC = () => {
                                             <span className="material-symbols-outlined text-sm">rocket_launch</span>
                                             Open-Source & Deployment
                                         </h3>
-                                        <ul className="space-y-2 text-sm text-gray-600">
+                                        <ul className="space-y-2 text-sm text-muted-foreground">
                                             <li className="flex items-start gap-2">
                                                 <span className="block w-1.5 h-1.5 rounded-full bg-[#6366f1] mt-1.5" />
                                                 <span>Official <strong>Open Source</strong> launch! The codebase is now public for transparency and community contribution at <a href="https://github.com/ajbatac/qrky" target="_blank" rel="noopener noreferrer" className="text-indigo-600 hover:underline font-medium">github.com/ajbatac/qrky</a>.</span>
@@ -139,13 +139,13 @@ const Changelog: React.FC = () => {
                             <span className="material-symbols-outlined text-xs text-purple-600">star</span>
                         </div>
 
-                        <Card className="elevated-card border-l-4 border-l-purple-500">
+                        <Card className="shadow-xl border-primary/10 bg-card hover:border-primary/20 transition-all duration-500 border-l-4 border-l-purple-500">
                             <CardHeader className="pb-4">
                                 <div className="flex flex-col md:flex-row md:items-center justify-between gap-2">
                                     <div className="space-y-1">
-                                        <CardTitle className="text-2xl font-bold flex items-center gap-3">
+                                        <CardTitle className="text-2xl font-bold text-foreground flex items-center gap-3">
                                             v2.0.0
-                                            <Badge variant="secondary" className="bg-purple-100 text-purple-700 hover:bg-purple-200">
+                                            <Badge variant="secondary" className="bg-purple-100 dark:bg-purple-900/30 text-purple-700 dark:text-purple-300 hover:bg-purple-200">
                                                 Major Update
                                             </Badge>
                                         </CardTitle>
@@ -156,17 +156,17 @@ const Changelog: React.FC = () => {
                                 </div>
                             </CardHeader>
                             <CardContent className="space-y-6">
-                                <p className="text-gray-600 leading-relaxed">
+                                <p className="text-muted-foreground leading-relaxed">
                                     We've kicked off 2026 with a massive update! The entire interface has been modernized with a fresh new look, improved responsiveness on all devices, and smoother interactions. We've also unified our versioning system and improved the underlying architecture for faster performance.
                                 </p>
 
                                 <div className="grid gap-4 md:grid-cols-2">
                                     <div className="space-y-3">
-                                        <h3 className="font-semibold flex items-center gap-2 text-gray-900">
+                                        <h3 className="font-semibold flex items-center gap-2 text-foreground">
                                             <span className="material-symbols-outlined text-sm text-purple-500">auto_awesome</span>
                                             Visual Overhaul
                                         </h3>
-                                        <ul className="space-y-2 text-sm text-gray-600">
+                                        <ul className="space-y-2 text-sm text-muted-foreground">
                                             <li className="flex items-start gap-2">
                                                 <span className="block w-1.5 h-1.5 rounded-full bg-purple-400 mt-1.5" />
                                                 Complete redesign with premium aesthetics and glassmorphism elements.
@@ -183,11 +183,11 @@ const Changelog: React.FC = () => {
                                     </div>
 
                                     <div className="space-y-3">
-                                        <h3 className="font-semibold flex items-center gap-2 text-gray-900">
+                                        <h3 className="font-semibold flex items-center gap-2 text-foreground">
                                             <span className="material-symbols-outlined text-sm text-amber-500">bolt</span>
                                             Improvements
                                         </h3>
-                                        <ul className="space-y-2 text-sm text-gray-600">
+                                        <ul className="space-y-2 text-sm text-muted-foreground">
                                             <li className="flex items-start gap-2">
                                                 <span className="block w-1.5 h-1.5 rounded-full bg-amber-400 mt-1.5" />
                                                 Enhanced mobile responsiveness - looks great on any screen size.
@@ -212,15 +212,15 @@ const Changelog: React.FC = () => {
                         <div className="hidden md:flex absolute -left-3 top-0 items-center justify-center w-6 h-6 rounded-full bg-gray-100 ring-4 ring-background">
                             <span className="material-symbols-outlined text-xs text-gray-500">article</span>
                         </div>
-                        <Card className="card-subtle">
+                        <Card className="bg-card/40 border-muted/50 backdrop-blur-sm hover:bg-card/60 transition-all duration-500">
                             <CardHeader className="pb-3">
                                 <div className="flex items-center gap-3">
-                                    <CardTitle className="text-xl font-bold">v1.1.0</CardTitle>
+                                    <CardTitle className="text-xl font-bold text-foreground">v1.1.0</CardTitle>
                                     <span className="text-sm text-muted-foreground">August 15, 2025</span>
                                 </div>
                             </CardHeader>
                             <CardContent>
-                                <ul className="space-y-2 text-sm text-gray-600">
+                                <ul className="space-y-2 text-sm text-muted-foreground">
                                     <li className="flex items-center gap-2">
                                         <span className="w-1 h-1 rounded-full bg-gray-400" />
                                         UI improvements and visual polish.
@@ -243,15 +243,15 @@ const Changelog: React.FC = () => {
                         <div className="hidden md:flex absolute -left-3 top-0 items-center justify-center w-6 h-6 rounded-full bg-gray-100 ring-4 ring-background">
                             <span className="material-symbols-outlined text-xs text-gray-500">shield</span>
                         </div>
-                        <Card className="card-subtle">
+                        <Card className="bg-card/40 border-muted/50 backdrop-blur-sm hover:bg-card/60 transition-all duration-500">
                             <CardHeader className="pb-3">
                                 <div className="flex items-center gap-3">
-                                    <CardTitle className="text-xl font-bold">v1.0.0</CardTitle>
+                                    <CardTitle className="text-xl font-bold text-foreground">v1.0.0</CardTitle>
                                     <span className="text-sm text-muted-foreground">August 15, 2025</span>
                                 </div>
                             </CardHeader>
                             <CardContent>
-                                <p className="text-sm text-gray-600 mb-3">
+                                <p className="text-sm text-muted-foreground mb-3">
                                     Initial release of QRky - the professional QR code generator.
                                 </p>
                                 <div className="flex flex-wrap gap-2">
