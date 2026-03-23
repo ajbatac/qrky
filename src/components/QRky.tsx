@@ -329,9 +329,9 @@ const APP_THEMES: Record<string, AppThemeConfig> = {
       '--border': '0 0% 90%',
     }
   },
-  basic: {
-    id: 'basic',
-    name: 'Basic Reset',
+  siteDefault: {
+    id: 'siteDefault',
+    name: 'Site Default',
     icon: 'restart_alt',
     mode: 'auto',
     variables: {
@@ -385,6 +385,9 @@ const QRky: React.FC = () => {
     
     // Clear existing vars if switching back to basic
     if (appTheme === 'basic') {
+      const varsToRemove = Object.keys(APP_THEMES.terminal.variables);
+      varsToRemove.forEach(v => root.style.removeProperty(v));
+    } else if (appTheme === 'siteDefault') {
       const varsToRemove = Object.keys(APP_THEMES.terminal.variables);
       varsToRemove.forEach(v => root.style.removeProperty(v));
     } else {
@@ -1142,7 +1145,7 @@ const QRky: React.FC = () => {
       </footer>
       <div className="fixed bottom-6 left-6 z-[60] flex flex-col items-start gap-4 pointer-events-auto group/theme-menu">
         {/* Expanded Theme List */}
-        <div className="flex flex-col-reverse items-start gap-2 max-h-0 opacity-0 overflow-hidden group-hover/theme-menu:max-h-[600px] group-hover/theme-menu:opacity-100 transition-all duration-700 ease-in-out pr-8">
+        <div className="flex flex-col-reverse items-start gap-2 max-h-0 opacity-0 overflow-y-auto group-hover/theme-menu:max-h-[min(70vh,520px)] group-hover/theme-menu:opacity-100 transition-all duration-700 ease-in-out pr-8 no-scrollbar">
           {Object.values(APP_THEMES).map((t) => (
             <button
               key={t.id}
@@ -1150,11 +1153,11 @@ const QRky: React.FC = () => {
                 setAppTheme(t.id as any);
                 if (t.id === 'ultraClean') {
                     updateConfig(QR_PRESETS.ultraClean);
-                } else if (t.id === 'basic') {
+                } else if (t.id === 'basic' || t.id === 'siteDefault') {
                     updateConfig(QR_PRESETS.default);
                 }
               }}
-              className={`flex items-center gap-3 px-3 py-2 rounded-full glass-card border-[var(--glass-border)] hover:border-[var(--text-color)]/20 transition-all hover:translate-x-2 w-fit ${appTheme === t.id ? 'bg-[var(--text-color)]/10 border-[var(--text-color)]/30 translate-x-2 shadow-[var(--glass-shadow)]' : 'text-[var(--text-muted)]'}`}
+              className={`flex items-center gap-3 px-3 py-2 rounded-full glass-card border-[var(--glass-border)] hover:border-[var(--text-color)]/20 transition-all w-fit ${appTheme === t.id ? 'bg-[var(--text-color)]/10 border-[var(--text-color)]/30 shadow-[var(--glass-shadow)]' : 'text-[var(--text-muted)]'}`}
               title={t.name}
             >
               <div 
@@ -1177,7 +1180,7 @@ const QRky: React.FC = () => {
           
           {/* Mode Toggle (only visible when Basic is selected or as a sub-option) */}
           {appTheme === 'basic' && (
-            <div className="flex items-center gap-1 p-1 glass-card rounded-full border-[var(--text-color)]/10 mb-2 mt-2 translate-x-2">
+            <div className="flex items-center gap-1 p-1 glass-card rounded-full border-[var(--text-color)]/10 mb-2 mt-2">
               <button 
                 onClick={() => setTheme('light')}
                 className={`p-2 rounded-full transition-all flex items-center justify-center ${theme === 'light' ? 'bg-[var(--text-color)] text-[var(--bg-color)] shadow-md' : 'text-[var(--text-muted)] hover:text-[var(--text-color)]'}`}
