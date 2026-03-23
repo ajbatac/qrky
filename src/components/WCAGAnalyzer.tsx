@@ -1,7 +1,6 @@
 import React from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { CheckCircle, XCircle, AlertTriangle } from 'lucide-react';
 import { QRConfig } from './QRky';
 
 interface WCAGAnalyzerProps {
@@ -46,10 +45,10 @@ const WCAGAnalyzer: React.FC<WCAGAnalyzerProps> = ({ config }) => {
   const contrastRatio = getContrastRatio(config.foregroundColor, config.backgroundColor);
 
   const getStatus = (ratio: number) => {
-    if (ratio >= 7) return { level: 'AAA', icon: <CheckCircle className="w-5 h-5 text-green-500" /> };
-    if (ratio >= 4.5) return { level: 'AA', icon: <CheckCircle className="w-5 h-5 text-green-500" /> };
-    if (ratio >= 3) return { level: 'A', icon: <AlertTriangle className="w-5 h-5 text-yellow-500" /> };
-    return { level: 'Fail', icon: <XCircle className="w-5 h-5 text-red-500" /> };
+    if (ratio >= 7) return { level: 'AAA', icon: <span className="material-symbols-outlined text-green-500">check_circle</span> };
+    if (ratio >= 4.5) return { level: 'AA', icon: <span className="material-symbols-outlined text-green-500">check_circle</span> };
+    if (ratio >= 3) return { level: 'A', icon: <span className="material-symbols-outlined text-yellow-500">warning</span> };
+    return { level: 'Fail', icon: <span className="material-symbols-outlined text-red-500">cancel</span> };
   };
 
   const status = getStatus(contrastRatio);
@@ -58,7 +57,7 @@ const WCAGAnalyzer: React.FC<WCAGAnalyzerProps> = ({ config }) => {
     <Card>
       <CardHeader>
         <CardTitle className="flex items-center gap-2">
-          <AlertTriangle className="w-6 h-6 text-purple-600" />
+          <span className="material-symbols-outlined text-purple-600">warning</span>
           <span className="text-xl font-bold bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">
             Accessibility Check
           </span>

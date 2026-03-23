@@ -1,21 +1,49 @@
 <!doctype html>
 <html lang="en">
   <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-8T618DB5F3"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-8T618DB5F3');
+    </script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>QRky - Professional QR Code Generator - Free and Open-Source</title>
-      <meta name="description" content="Generate professional QR codes with real-time preview, customizable colors, logos, and patterns. Includes WCAG accessibility analysis for color contrast and QR code decoding from images. Free and open-source." />
-      <meta name="keywords" content="QR code generator, real-time preview, customizable QR code, color contrast, WCAG accessibility, QR code decoding, free QR code tool, open-source QR code, logo QR code, QR code patterns" />
-      <meta property="og:title" content="QRky - Professional QR Code Generator - Free and Open-Source" />
-      <meta property="og:description" content="Create and customize QR codes with live preview, advanced design options, accessibility analysis, and image decoding. QRky is free and open-source." />
+    <title>QRky - Professional & Stylized QR Code Design System</title>
+      <meta name="description" content="QRky is a professional, open-source QR code design system. Create premium, stylized QR codes with real-time preview, logo integration, and advanced structural patterns. Free, secure, and private." />
+      <meta name="keywords" content="professional QR design, high-end QR code, stylized QR generator, cyber-futuristic design, designer QR code, secure QR generator, advanced QR patterns" />
+      <meta property="og:title" content="QRky - Professional & Stylized QR Code Design System" />
+      <meta property="og:description" content="Create premium, stylized QR codes with live preview, deep aesthetic customization, and professional-grade security. Designed for modern digital identities." />
       <meta property="og:type" content="website" />
+      <meta property="og:image" content="/og.jpeg" />
+      <meta property="og:image:type" content="image/jpeg" />
+      <meta property="og:image:width" content="1200" />
+      <meta property="og:image:height" content="630" />
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:title" content="QRky - Professional & Stylized QR Code Design System" />
+      <meta name="twitter:description" content="Create premium, stylized QR codes with live preview, deep aesthetic customization, and professional-grade security." />
+      <meta name="twitter:image" content="/og.jpeg" />
       <meta name="author" content="AJ Batac" />
       <link rel="icon" href="/favicon.ico" type="image/x-icon">
       <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
       <link rel="manifest" href="/manifest.webmanifest">
+      <meta name="theme-color" content="#6366f1">
+      <link rel="canonical" href="https://qrky.site" />
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
   </head>
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/sw.js')
+            .catch(err => { /* Silent fail in non-supported environments */ });
+        });
+      }
+    </script>
   </body>
 </html>

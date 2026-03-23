@@ -2,7 +2,6 @@ import React from 'react';
 import FooterCopyright from '../components/FooterCopyright';
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { ScrollText, Rss, ArrowLeft, Star, Zap, Shield, Wand2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 const Changelog: React.FC = () => {
@@ -14,7 +13,7 @@ const Changelog: React.FC = () => {
                     <div className="space-y-2">
                         <Button variant="ghost" className="pl-0 hover:bg-transparent hover:text-primary/80" asChild>
                             <a href="/" className="flex items-center gap-2 text-muted-foreground transition-colors">
-                                <ArrowLeft className="w-4 h-4" />
+                                <span className="material-symbols-outlined text-sm">arrow_back</span>
                                 Back to Generator
                             </a>
                         </Button>
@@ -31,7 +30,7 @@ const Changelog: React.FC = () => {
                         rel="noopener noreferrer"
                         className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-orange-100 text-orange-700 hover:bg-orange-200 transition-colors font-medium text-sm"
                     >
-                        <Rss className="w-4 h-4" />
+                        <span className="material-symbols-outlined text-sm">rss_feed</span>
                         Subscribe to feed
                     </a>
                 </div>
@@ -39,10 +38,105 @@ const Changelog: React.FC = () => {
                 {/* Changelog Entries */}
                 <div className="space-y-8">
 
+                    {/* Version 2.1.0 */}
+                    <div className="relative pl-8 md:pl-0">
+                        <div className="hidden md:flex absolute -left-3 top-0 items-center justify-center w-6 h-6 rounded-full bg-blue-100 ring-4 ring-background">
+                            <span className="material-symbols-outlined text-xs text-blue-600">new_releases</span>
+                        </div>
+
+                        <Card className="elevated-card border-l-4 border-l-blue-500">
+                            <CardHeader className="pb-4">
+                                <div className="flex flex-col md:flex-row md:items-center justify-between gap-2">
+                                    <div className="space-y-1">
+                                        <CardTitle className="text-2xl font-bold flex items-center gap-3">
+                                            v2.5.0
+                                            <Badge variant="secondary" className="bg-blue-100 text-blue-700 hover:bg-blue-200">
+                                                UI & Documentation Polish
+                                            </Badge>
+                                        </CardTitle>
+                                        <p className="text-sm text-muted-foreground font-medium">
+                                            March 23, 2026
+                                        </p>
+                                    </div>
+                                </div>
+                            </CardHeader>
+                            <CardContent className="space-y-6">
+                                <p className="text-gray-600 leading-relaxed font-normal">
+                                    Continuing our commitment to visual excellence and transparency, this update introduces a more refined header layout, clearer feature visibility through badges, and expanded legal documentation. We've also polished the theme customization experience for a more premium feel.
+                                </p>
+
+                                <div className="grid gap-4 md:grid-cols-2">
+                                    <div className="space-y-3">
+                                        <h3 className="font-semibold flex items-center gap-2 text-gray-900">
+                                            <span className="material-symbols-outlined text-sm text-blue-500">design_services</span>
+                                            UI & UX Refinement
+                                        </h3>
+                                        <ul className="space-y-2 text-sm text-gray-600">
+                                            <li className="flex items-start gap-2">
+                                                <span className="block w-1.5 h-1.5 rounded-full bg-blue-400 mt-1.5" />
+                                                Horizontal header layout with a more natural information flow.
+                                            </li>
+                                            <li className="flex items-start gap-2">
+                                                <span className="block w-1.5 h-1.5 rounded-full bg-blue-400 mt-1.5" />
+                                                New feature badges highlighting our key principles: Open-Source, Free, Private & Secure.
+                                            </li>
+                                            <li className="flex items-start gap-2">
+                                                <span className="block w-1.5 h-1.5 rounded-full bg-blue-400 mt-1.5" />
+                                                Improved theme customizer with interactive sliding labels and compact design.
+                                            </li>
+                                        </ul>
+                                    </div>
+
+                                    <div className="space-y-3">
+                                        <h3 className="font-semibold flex items-center gap-2 text-gray-900">
+                                            <span className="material-symbols-outlined text-sm text-green-500">verified</span>
+                                            Trust & Transparency
+                                        </h3>
+                                        <ul className="space-y-2 text-sm text-gray-600">
+                                            <li className="flex items-start gap-2">
+                                                <span className="block w-1.5 h-1.5 rounded-full bg-green-400 mt-1.5" />
+                                                Added comprehensive legal pages including UGC Disclaimer and DMCA Policy.
+                                            </li>
+                                            <li className="flex items-start gap-2">
+                                                <span className="block w-1.5 h-1.5 rounded-full bg-green-400 mt-1.5" />
+                                                Updated web manifest and site metadata for a unified brand identity.
+                                            </li>
+                                            <li className="flex items-start gap-2">
+                                                <span className="block w-1.5 h-1.5 rounded-full bg-green-400 mt-1.5" />
+                                                Integrated standard tracking and background noise effects for a professional touch.
+                                            </li>
+                                        </ul>
+                                    </div>
+
+                                    <div className="space-y-3 md:col-span-2 pt-4 border-t border-gray-100">
+                                        <h3 className="font-semibold flex items-center gap-2 text-[var(--accent-color)]">
+                                            <span className="material-symbols-outlined text-sm">rocket_launch</span>
+                                            Open-Source & Deployment
+                                        </h3>
+                                        <ul className="space-y-2 text-sm text-gray-600">
+                                            <li className="flex items-start gap-2">
+                                                <span className="block w-1.5 h-1.5 rounded-full bg-[#6366f1] mt-1.5" />
+                                                <span>Official <strong>Open Source</strong> launch! The codebase is now public for transparency and community contribution at <a href="https://github.com/ajbatac/qrky" target="_blank" rel="noopener noreferrer" className="text-indigo-600 hover:underline font-medium">github.com/ajbatac/qrky</a>.</span>
+                                            </li>
+                                            <li className="flex items-start gap-2">
+                                                <span className="block w-1.5 h-1.5 rounded-full bg-indigo-400 mt-1.5" />
+                                                Full <strong>PWA (Progressive Web App)</strong> support with service worker integration for installability and offline caching of core assets.
+                                            </li>
+                                            <li className="flex items-start gap-2">
+                                                <span className="block w-1.5 h-1.5 rounded-full bg-indigo-400 mt-1.5" />
+                                                Optimized for <strong>Netlify Deployment</strong> with advanced routing rules and SEO meta data improvements.
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </CardContent>
+                        </Card>
+                    </div>
+
                     {/* Version 2.0.0 */}
                     <div className="relative pl-8 md:pl-0">
                         <div className="hidden md:flex absolute -left-3 top-0 items-center justify-center w-6 h-6 rounded-full bg-purple-100 ring-4 ring-background">
-                            <Star className="w-3 h-3 text-purple-600" />
+                            <span className="material-symbols-outlined text-xs text-purple-600">star</span>
                         </div>
 
                         <Card className="elevated-card border-l-4 border-l-purple-500">
@@ -69,7 +163,7 @@ const Changelog: React.FC = () => {
                                 <div className="grid gap-4 md:grid-cols-2">
                                     <div className="space-y-3">
                                         <h3 className="font-semibold flex items-center gap-2 text-gray-900">
-                                            <Wand2 className="w-4 h-4 text-purple-500" />
+                                            <span className="material-symbols-outlined text-sm text-purple-500">auto_awesome</span>
                                             Visual Overhaul
                                         </h3>
                                         <ul className="space-y-2 text-sm text-gray-600">
@@ -90,7 +184,7 @@ const Changelog: React.FC = () => {
 
                                     <div className="space-y-3">
                                         <h3 className="font-semibold flex items-center gap-2 text-gray-900">
-                                            <Zap className="w-4 h-4 text-amber-500" />
+                                            <span className="material-symbols-outlined text-sm text-amber-500">bolt</span>
                                             Improvements
                                         </h3>
                                         <ul className="space-y-2 text-sm text-gray-600">
@@ -116,7 +210,7 @@ const Changelog: React.FC = () => {
                     {/* Version 1.1.0 */}
                     <div className="relative pl-8 md:pl-0 opacity-80 hover:opacity-100 transition-opacity">
                         <div className="hidden md:flex absolute -left-3 top-0 items-center justify-center w-6 h-6 rounded-full bg-gray-100 ring-4 ring-background">
-                            <ScrollText className="w-3 h-3 text-gray-500" />
+                            <span className="material-symbols-outlined text-xs text-gray-500">article</span>
                         </div>
                         <Card className="card-subtle">
                             <CardHeader className="pb-3">
@@ -147,7 +241,7 @@ const Changelog: React.FC = () => {
                     {/* Version 1.0.0 */}
                     <div className="relative pl-8 md:pl-0 opacity-80 hover:opacity-100 transition-opacity">
                         <div className="hidden md:flex absolute -left-3 top-0 items-center justify-center w-6 h-6 rounded-full bg-gray-100 ring-4 ring-background">
-                            <Shield className="w-3 h-3 text-gray-500" />
+                            <span className="material-symbols-outlined text-xs text-gray-500">shield</span>
                         </div>
                         <Card className="card-subtle">
                             <CardHeader className="pb-3">

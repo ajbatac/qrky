@@ -1,15 +1,16 @@
-# QRky - Stunning, Customizable QR Codes
+# QRky - Stunning, Customizable QR Codes (Open Source)
 
-QRky is a powerful web application for creating highly customizable QR codes. With a real-time preview, you can design QR codes with advanced styling options, including colors, gradients, logos, and various patterns.
+QRky is a powerful, professional, and **open-source** web application for creating highly customizable QR codes. Designed for modern digital identity, it provides a real-time preview and advanced styling options—including colors, gradients, logos, and structural patterns—while maintaining a strict focus on privacy and local processing.
 
 ## Features
 
-- **Real-Time Preview**: See your QR code design update instantly as you make changes.
-- **Advanced Styling**: Customize everything from colors and gradients to patterns and borders.
-- **Logo Embedding**: Add your own logo to the center of the QR code.
-- **Background Options**: Choose between solid colors, gradients, or a custom background image.
-- **WCAG Accessibility Analysis**: Ensure your QR code is accessible with a real-time contrast ratio checker.
-- **QR Code Decoder**: Upload an image to decode a QR code and see its contents.
+- **Open Source & Transparent**: Fully audited code for privacy and security. [View on GitHub](https://github.com/ajbatac/qrky).
+- **Real-Time Preview**: Instant updates as you design.
+- **Advanced Styling**: Granular control over colors, gradients, and patterns.
+- **Logo Integration**: Embed branding directly into your QR codes.
+- **Privacy First**: Local and offline processing with no cloud or database required.
+- **WCAG Accessibility**: Built-in contrast analysis for inclusive design.
+- **QR Code Decoder**: Built-in tool to read existing QR codes.
 
 ## 2026 Update (v2.0.0)
 
@@ -17,6 +18,15 @@ The application has undergone a major visual overhaul and architecture update:
 - **Modernized UI**: Premium aesthetics with glassmorphism, smooth animations, and refined typography.
 - **Improved Responsiveness**: Fixed layout issues on narrow monitors and optimized mobile experience.
 - **Architecture**: Migrated to client-side routing for better navigation and performance.
+- **Improved UX**: Simplified typography and refined theme customization experience.
+
+## UI & Documentation Polish (v2.5.0 - March 2026)
+
+This update focuses on visual refinement and transparency:
+- **Refined Header**: Optimized horizontal layout with a natural information flow.
+- **Transparency Badges**: Integrated feature badges for Open-Source, Privacy, and Accessibility.
+- **Expanded Legal Pages**: Added comprehensive policies for DMCA, UGC, and better transparency.
+- **Visual Polish**: Subtle background noise effects and sleek transitions throughout.
 
 ## Project Structure
 
@@ -24,30 +34,11 @@ The project is a standard Vite + React application with the following structure:
 
 - **`public/`**: Contains static assets that are served directly.
 - **`src/`**: Contains the main source code for the application.
-  - **`components/`**: Contains the main React components for the application.
-    - **`ui/`**: Contains reusable UI components like buttons, inputs, and sliders.
-    - **`BackgroundCustomizer.tsx`**: Component for customizing the QR code's background.
-    - **`ColorPicker.tsx`**: Component for selecting the foreground and background colors.
-    - **`LogoUploader.tsx`**: Component for uploading and customizing a logo.
-    - **`QRCodeDecoder.tsx`**: Component for decoding QR codes from an uploaded image.
-    - **`QRCodeGenerator.tsx`**: Component that renders the QR code canvas.
-    - **`QRky.tsx`**: The main application component that ties everything together.
-    - **`StyleCustomizer.tsx`**: Component for customizing the QR code's pattern and border.
-    - **`WCAGAnalyzer.tsx`**: Component that analyzes the color contrast for accessibility.
-  - **`hooks/`**: Contains custom React hooks.
-  - **`lib/`**: Contains utility functions.
-  - **`main.tsx`**: The entry point for the React application.
-  - **`index.css`**: The main stylesheet for the application.
-
-## Dependencies
-
-- **`react`**: A JavaScript library for building user interfaces.
-- **`vite`**: A fast build tool for modern web projects.
-- **`tailwindcss`**: A utility-first CSS framework for rapid UI development.
-- **`qrcode`**: A library for generating QR codes.
-- **`jsqr`**: A library for decoding QR codes from images.
-- **`lucide-react`**: A library of simply beautiful icons.
-- **`@radix-ui/react-*`**: A collection of accessible UI components.
+  - **`components/`**: Main React components.
+  - **`hooks/`**: Custom React hooks.
+  - **`lib/`**: Utility functions and design logic.
+  - **`main.tsx`**: Entry point.
+  - **`index.css`**: Global styles and theme variables.
 
 ## Getting Started
 
@@ -60,7 +51,7 @@ The project is a standard Vite + React application with the following structure:
 
 1.  Clone the repository:
     ```bash
-    git clone https://github.com/your-username/qrky.git
+    git clone https://github.com/ajbatac/qrky.git
     ```
 2.  Navigate to the project directory:
     ```bash
@@ -93,8 +84,8 @@ This will create a `dist/` directory with the optimized production build.
 
 ## Deployment
 
-This project can be deployed to any static hosting service. For more advanced deployments, Docker configurations are provided.
+This project can be deployed to any static hosting service (Netlify, Vercel, etc.). Docker configurations are also provided for advanced deployment scenarios.
 
 ---
 
-Created with ❤️ by [AJ Batac (@ajbatac)](https://ajbatac.github.io/?=QRky) - v2.0.0 ([changelog](/changelog))
+Created with ❤️ by [AJ Batac (@ajbatac) - v2.5.0](https://ajbatac.github.io) ([changelog](/changelog))

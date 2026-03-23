@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0">
+<channel>
+  <title>QRky Changelog</title>
+  <link>https://qrky.site/changelog</link>
+  <description>Stay updated with the latest improvements and features for QRky - The Professional QR Code Generator.</description>
+  <language>en-us</language>
+  <lastBuildDate>Thu, 15 Jan 2026 12:00:00 GMT</lastBuildDate>
+  <item>
+    <title>v2.0.0 - Major 2026 Update</title>
+    <link>https://qrky.site/changelog</link>
+    <pubDate>Thu, 15 Jan 2026 12:00:00 GMT</pubDate>
+    <guid>v2.0.0</guid>
+    <description>
+      <![CDATA[
+      <ul>
+        <li><strong>Architecture Update:</strong> Migrated to client-side routing for faster navigation.</li>
+        <li><strong>Visual Overhaul:</strong> Complete redesign with premium glassmorphism aesthetics, soft shadows, and smooth animations.</li>
+        <li><strong>Responsive Fixes:</strong> Solved card spacing issues on narrow monitors and optimized mobile layout.</li>
+        <li><strong>Documentation:</strong> Updated comprehensive guides and added RSS feed support.</li>
+      </ul>
+      ]]>
+    </description>
+  </item>
+  <item>
+    <title>v1.1.0 - Usability Improvements</title>
+    <link>https://qrky.site/changelog</link>
+    <pubDate>Fri, 15 Aug 2025 12:00:00 GMT</pubDate>
+    <guid>v1.1.0</guid>
+    <description>UI polish, code cleanup, and added usage instructions.</description>
+  </item>
+  <item>
+    <title>v1.0.0 - Initial Release</title>
+    <link>https://qrky.site/changelog</link>
+    <pubDate>Fri, 15 Aug 2025 12:00:00 GMT</pubDate>
+    <guid>v1.0.0</guid>
+    <description>Initial launch of QRky with real-time preview, customization options, and WCAG accessibility analysis.</description>
+  </item>
+</channel>
+</rss>
