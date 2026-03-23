@@ -605,8 +605,9 @@ const QRky: React.FC = () => {
 
       <main className="relative flex items-center justify-center min-h-screen overflow-hidden">
         
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[900px] rounded-full border border-white/5 opacity-50 animate-pulse-ring pointer-events-none" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] rounded-full border border-white/10 opacity-30 pointer-events-none" />
+        {/* pulse-ring: keyframe owns translate+scale, so no Tailwind -translate-x/y here */}
+        <div className="absolute top-1/2 left-1/2 w-[900px] h-[900px] rounded-full border border-white/5 opacity-50 animate-pulse-ring pointer-events-none" style={{ marginLeft: '-450px', marginTop: '-450px' }} />
+        <div className="absolute top-1/2 left-1/2 w-[700px] h-[700px] rounded-full border border-white/10 opacity-30 pointer-events-none" style={{ transform: 'translate(-50%, -50%)' }} />
 
         {/* Orbit Nodes - Draggable Container */}
         <div className="absolute inset-0 pointer-events-none">
@@ -668,15 +669,15 @@ const QRky: React.FC = () => {
         </div>
 
         {/* Central QR Code Stage */}
-        <div className="relative z-10 group cursor-pointer transition-all duration-1000">
+        <div className="relative z-10 group cursor-pointer transition-[opacity,transform] duration-700">
           <div 
-            className="absolute -inset-24 rounded-[4rem] opacity-75 blur-[100px] transition-all duration-1000 group-hover:opacity-100 group-hover:inset-[-15rem]" 
+            className="absolute -inset-24 rounded-[4rem] blur-[60px] transition-opacity duration-700 group-hover:opacity-100" 
             style={{ 
               backgroundColor: config.neonColor,
               opacity: config.auraIntensity / 100
             }}
           />
-          <div className={`relative glass-card p-4 md:p-8 rounded-[2rem] md:rounded-[3rem] border-white/20 shadow-2xl overflow-hidden backdrop-blur-3xl transition-all duration-1000 transform scale-[0.6] sm:scale-[0.85] lg:scale-100 ${isGenerating ? 'blur-xl brightness-150 rotate-3' : 'blur-0'}`}>
+          <div className={`relative glass-card p-4 md:p-8 rounded-[2rem] md:rounded-[3rem] border-white/20 shadow-2xl overflow-hidden backdrop-blur-xl transition-[filter,transform,opacity] duration-700 scale-[0.6] sm:scale-[0.85] lg:scale-100 ${isGenerating ? 'blur-xl brightness-150 rotate-3' : 'blur-0'}`}>
             <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent" />
             <div className={isGenerating ? 'animate-pulse opacity-50' : ''}>
               <QRCodeGenerator 
