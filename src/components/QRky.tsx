@@ -305,7 +305,63 @@ const APP_THEMES: Record<string, AppThemeConfig> = {
       '--neon-color': '#2aa198',
       '--mesh-opacity': '1',
     }
+  },
+  ultraClean: {
+    id: 'ultraClean',
+    name: 'Ultra Clean',
+    icon: 'filter_b_and_w',
+    mode: 'light',
+    variables: {
+      '--bg-color': '#ffffff',
+      '--text-color': '#000000',
+      '--text-muted': 'rgba(0, 0, 0, 0.6)',
+      '--mesh-1': '#ffffff',
+      '--mesh-2': '#fbfbfb',
+      '--mesh-3': '#f5f5f5',
+      '--glass-bg': 'rgba(255, 255, 255, 0.95)',
+      '--glass-border': 'rgba(0, 0, 0, 0.1)',
+      '--glass-shadow': 'rgba(0, 0, 0, 0.05)',
+      '--neon-color': '#000000',
+      '--mesh-opacity': '0',
+      '--background': '0 0% 100%',
+      '--foreground': '0 0% 0%',
+      '--card': '0 0% 100%',
+      '--border': '0 0% 90%',
+    }
+  },
+  basic: {
+    id: 'basic',
+    name: 'Basic Reset',
+    icon: 'restart_alt',
+    mode: 'auto',
+    variables: {
+      '--bg-color': 'transparent',
+      '--text-color': 'currentColor',
+      '--text-muted': 'rgba(128, 128, 128, 0.6)',
+      '--mesh-1': 'transparent',
+      '--mesh-2': 'transparent',
+      '--mesh-3': 'transparent',
+      '--glass-bg': 'rgba(255, 255, 255, 0.05)',
+      '--glass-border': 'rgba(255, 255, 255, 0.1)',
+      '--glass-shadow': 'none',
+      '--neon-color': '#3b82f6',
+      '--mesh-opacity': '0',
+    }
   }
+};
+
+const QR_PRESETS: Record<string, Partial<QRConfig>> = {
+  ultraClean: {
+    foregroundColor: '#000000',
+    backgroundColor: '#ffffff',
+    backgroundType: 'solid',
+    auraIntensity: 0,
+    pattern: 'square',
+    shadow: false,
+    neonColor: '#000000',
+    borderStyle: 'none'
+  },
+  default: DEFAULT_CONFIG
 };
 
 const QRky: React.FC = () => {
@@ -473,6 +529,8 @@ const QRky: React.FC = () => {
     <div className="relative min-h-screen text-[var(--text-color)] overflow-hidden selection:bg-purple-500/30">
       <div className="mesh-gradient" />
       <div className="bg-noise" />
+      <div className="bg-fine-grain" />
+      <div className="bg-dark-overlay" />
       
       <header className="absolute top-0 left-0 w-full p-6 md:p-8 md:px-16 flex flex-col items-center z-50 gap-4 md:gap-6">
         <div className="w-full flex flex-col md:flex-row items-center justify-between gap-4 md:gap-0">
@@ -886,108 +944,120 @@ const QRky: React.FC = () => {
                 <span className="material-symbols-outlined text-white text-2xl font-black group-hover:rotate-180 transition-transform duration-500">close</span>
               </button>
               <div className="glass-card p-6 rounded-[2.5rem] w-[34rem] max-h-[80vh] overflow-y-auto border-[var(--glass-border)] shadow-[var(--glass-shadow)] no-scrollbar">
-              
-              <div className="flex flex-col gap-[14px] items-center text-center w-full">
-                <div className="w-full">
-                  <span className="text-[10px] font-black uppercase tracking-[0.6em] text-blue-400 mb-0.5 block">Customization</span>
-                  <h3 className="text-xl font-black uppercase tracking-tighter leading-none text-[var(--text-color)]">Style Options</h3>
-                </div>
+                
+                <div className="flex flex-col gap-6 items-center text-center w-full">
+                  <div className="w-full">
+                    <span className="text-[10px] font-black uppercase tracking-[0.6em] text-blue-400 mb-0.5 block">Customization</span>
+                    <h3 className="text-xl font-black uppercase tracking-tighter leading-none text-[var(--text-color)]">Style Options</h3>
+                  </div>
 
-                <div className="space-y-4 w-full">
-                  <div className="space-y-2">
-                    <div className="flex justify-between items-center">
-                      <Label className="text-[10px] uppercase font-black tracking-[0.4em] text-[var(--text-muted)] px-1">Main Color</Label>
-                      <div className="w-10 h-10 rounded-full overflow-hidden border-2 border-white/20 shadow-2xl">
-                        <input 
-                          type="color" 
-                          value={config.neonColor} 
-                          onChange={(e) => updateConfig({ neonColor: e.target.value })} 
-                          className="w-[200%] h-[200%] -translate-x-1/4 -translate-y-1/4 cursor-pointer" 
-                        />
+                  <div className="space-y-6 w-full">
+                    {/* Quick Presets */}
+                    <div className="space-y-3">
+                      <Label className="text-[10px] uppercase font-black tracking-[0.6em] text-blue-400 block mb-2 px-1 text-left">Quick Presets</Label>
+                      <div className="grid grid-cols-2 gap-3">
+                        <button
+                          onClick={() => updateConfig(QR_PRESETS.ultraClean)}
+                          className="flex items-center justify-center gap-2 p-3 rounded-[1.2rem] border-[var(--glass-border)] bg-[var(--text-color)]/5 hover:bg-[var(--text-color)]/10 hover:border-[var(--text-color)]/20 transition-all group/preset"
+                        >
+                          <span className="material-symbols-outlined text-lg text-blue-400 group-hover/preset:scale-110 transition-transform">filter_b_and_w</span>
+                          <span className="text-[10px] font-black uppercase tracking-widest text-[var(--text-color)]">Ultra Clean</span>
+                        </button>
+                        <button
+                          onClick={() => updateConfig(QR_PRESETS.default)}
+                          className="flex items-center justify-center gap-2 p-3 rounded-[1.2rem] border-[var(--glass-border)] bg-[var(--text-color)]/5 hover:bg-[var(--text-color)]/10 hover:border-[var(--text-color)]/20 transition-all group/preset"
+                        >
+                          <span className="material-symbols-outlined text-lg text-blue-400 group-hover/preset:rotate-180 transition-transform duration-500">restart_alt</span>
+                          <span className="text-[10px] font-black uppercase tracking-widest text-[var(--text-color)]">Classic Reset</span>
+                        </button>
                       </div>
                     </div>
-                  </div>
 
-                  <div className="space-y-2">
-                    <div className="flex justify-between items-end mb-0.5 px-1">
-                       <Label className="text-[10px] uppercase font-black tracking-[0.4em] text-[var(--text-muted)]">Glow Strength</Label>
-                       <span className="text-sm text-blue-400 font-mono font-bold">{config.auraIntensity}</span>
+                    {/* Glow Strength */}
+                    <div className="space-y-3">
+                      <div className="flex justify-between items-end mb-0.5 px-1">
+                         <Label className="text-[10px] uppercase font-black tracking-[0.4em] text-[var(--text-muted)]">Glow Strength</Label>
+                         <span className="text-sm text-blue-400 font-mono font-bold">{config.auraIntensity}</span>
+                      </div>
+                      <Slider 
+                        value={[config.auraIntensity]} 
+                        onValueChange={(val) => updateConfig({ auraIntensity: val[0] })} 
+                        className="py-1"
+                      />
                     </div>
-                    <Slider 
-                      value={[config.auraIntensity]} 
-                      onValueChange={(val) => updateConfig({ auraIntensity: val[0] })} 
-                      className="py-1"
-                    />
-                  </div>
 
-                  <div className="space-y-2">
-                    <div className="flex justify-between items-end mb-0.5 px-1">
-                       <Label className="text-[10px] uppercase font-black tracking-[0.4em] text-[var(--text-muted)]">Logo Size</Label>
-                       <span className="text-sm text-blue-400 font-mono font-bold">{config.logoSize}</span>
+                    {/* Logo Size */}
+                    <div className="space-y-3">
+                      <div className="flex justify-between items-end mb-0.5 px-1">
+                         <Label className="text-[10px] uppercase font-black tracking-[0.4em] text-[var(--text-muted)]">Logo Size</Label>
+                         <span className="text-sm text-blue-400 font-mono font-bold">{config.logoSize}</span>
+                      </div>
+                      <Slider 
+                        value={[config.logoSize]} 
+                        onValueChange={(val) => updateConfig({ logoSize: val[0] })} 
+                        max={30} 
+                        className="py-1"
+                      />
                     </div>
-                    <Slider 
-                      value={[config.logoSize]} 
-                      onValueChange={(val) => updateConfig({ logoSize: val[0] })} 
-                      max={30} 
-                      className="py-1"
-                    />
-                  </div>
 
-                  <div className="space-y-2 pt-2 border-t border-[var(--text-color)]/10">
-                    <Label className="text-[10px] uppercase font-black tracking-[0.6em] text-blue-400 block mb-2">QR Pattern</Label>
-                    <div className="grid grid-cols-2 gap-3">
-                      {[
-                        { id: 'square', label: 'Classic', icon: 'square' },
-                        { id: 'circle', label: 'Nodes', icon: 'circle' },
-                        { id: 'rounded', label: 'Soft', icon: 'rounded_corner' },
-                        { id: 'dots', label: 'Digital', icon: 'blur_on' }
-                      ].map((p) => (
-                        <button
-                          key={p.id}
-                          onClick={() => updateConfig({ pattern: p.id as any })}
-                          className={`flex items-center gap-3 p-2.5 rounded-[1rem] border-2 transition-all duration-300 ${
-                            config.pattern === p.id 
-                              ? 'bg-blue-500/20 border-blue-500 shadow-[0_0_15px_rgba(59,130,246,0.2)]' 
-                              : 'bg-[var(--text-color)]/5 border-[var(--text-color)]/10 hover:border-[var(--text-color)]/20'
-                          }`}
-                        >
-                          <span className="material-symbols-outlined text-xl text-blue-400">{p.icon}</span>
-                          <span className="text-[10px] font-black uppercase tracking-widest text-[var(--text-muted)]">{p.label}</span>
-                        </button>
-                      ))}
+                    {/* QR Pattern */}
+                    <div className="space-y-3 pt-2 border-t border-[var(--text-color)]/10">
+                      <Label className="text-[10px] uppercase font-black tracking-[0.6em] text-blue-400 block mb-2 px-1 text-left">QR Pattern</Label>
+                      <div className="grid grid-cols-2 gap-3">
+                        {[
+                          { id: 'square', label: 'Classic', icon: 'square' },
+                          { id: 'circle', label: 'Nodes', icon: 'circle' },
+                          { id: 'rounded', label: 'Soft', icon: 'rounded_corner' },
+                          { id: 'dots', label: 'Digital', icon: 'blur_on' }
+                        ].map((p) => (
+                          <button
+                            key={p.id}
+                            onClick={() => updateConfig({ pattern: p.id as any })}
+                            className={`flex items-center gap-3 p-2.5 rounded-[1rem] border-2 transition-all duration-300 ${
+                              config.pattern === p.id 
+                                ? 'bg-blue-500/20 border-blue-500 shadow-[0_0_15px_rgba(59,130,246,0.2)]' 
+                                : 'bg-[var(--text-color)]/5 border-[var(--text-color)]/10 hover:border-[var(--text-color)]/20'
+                            }`}
+                          >
+                            <span className="material-symbols-outlined text-xl text-blue-400">{p.icon}</span>
+                            <span className="text-[10px] font-black uppercase tracking-widest text-[var(--text-muted)]">{p.label}</span>
+                          </button>
+                        ))}
+                      </div>
                     </div>
-                  </div>
 
-                  <div className="pt-4 border-t border-white/10">
-                    <LogoUploader config={config} onUpdateConfig={updateConfig} />
-                  </div>
+                    {/* Logo & Background */}
+                    <div className="pt-4 border-t border-white/10">
+                      <LogoUploader config={config} onUpdateConfig={updateConfig} />
+                    </div>
 
-                  <div className="pt-4 border-t border-white/10">
-                    <BackgroundCustomizer config={config} onUpdateConfig={updateConfig} />
-                  </div>
+                    <div className="pt-4 border-t border-white/10">
+                      <BackgroundCustomizer config={config} onUpdateConfig={updateConfig} />
+                    </div>
 
-                  <div className="sticky bottom-0 py-4 flex gap-[14px] z-[103] w-full">
-                    <Button 
-                      onClick={handleReset}
-                      variant="outline"
-                      className="h-10 flex-1 border-[var(--text-color)]/10 bg-[var(--text-color)]/5 hover:bg-[var(--text-color)]/10 text-[var(--text-muted)] hover:text-[var(--text-color)] rounded-[1rem] font-black uppercase tracking-widest text-[10px] transition-all"
-                    >
-                      <span className="material-symbols-outlined text-xs mr-2">restart_alt</span>
-                      Reset
-                    </Button>
-                    <Button 
-                      onClick={handleGo}
-                      disabled={!isFormValid()}
-                      className="h-10 flex-[2] bg-green-500 hover:bg-green-400 text-white rounded-[1rem] font-black uppercase tracking-widest text-base shadow-[0_0_30px_rgba(34,197,94,0.2)] active:scale-95 transition-all group disabled:opacity-50 disabled:cursor-not-allowed"
-                    >
-                      Go
-                      <span className="material-symbols-outlined ml-2 group-hover:animate-pulse text-xl">bolt</span>
-                    </Button>
+                    {/* Action Buttons */}
+                    <div className="sticky bottom-0 pt-4 flex gap-[14px] z-[103] w-full bg-transparent">
+                      <Button 
+                        onClick={handleReset}
+                        variant="outline"
+                        className="h-10 flex-1 border-[var(--text-color)]/10 bg-[var(--text-color)]/5 hover:bg-[var(--text-color)]/10 text-[var(--text-muted)] hover:text-[var(--text-color)] rounded-[1rem] font-black uppercase tracking-widest text-[10px] transition-all"
+                      >
+                        <span className="material-symbols-outlined text-xs mr-2">restart_alt</span>
+                        Reset
+                      </Button>
+                      <Button 
+                        onClick={handleGo}
+                        disabled={!isFormValid()}
+                        className="h-10 flex-[2] bg-green-500 hover:bg-green-400 text-white rounded-[1rem] font-black uppercase tracking-widest text-base shadow-[0_0_30px_rgba(34,197,94,0.2)] active:scale-95 transition-all group disabled:opacity-50 disabled:cursor-not-allowed"
+                      >
+                        Go
+                        <span className="material-symbols-outlined ml-2 group-hover:animate-pulse text-xl">bolt</span>
+                      </Button>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
           </div>
         )}
 
@@ -1076,7 +1146,14 @@ const QRky: React.FC = () => {
           {Object.values(APP_THEMES).map((t) => (
             <button
               key={t.id}
-              onClick={() => setAppTheme(t.id as any)}
+              onClick={() => {
+                setAppTheme(t.id as any);
+                if (t.id === 'ultraClean') {
+                    updateConfig(QR_PRESETS.ultraClean);
+                } else if (t.id === 'basic') {
+                    updateConfig(QR_PRESETS.default);
+                }
+              }}
               className={`flex items-center gap-3 px-3 py-2 rounded-full glass-card border-[var(--glass-border)] hover:border-[var(--text-color)]/20 transition-all hover:translate-x-2 w-fit ${appTheme === t.id ? 'bg-[var(--text-color)]/10 border-[var(--text-color)]/30 translate-x-2 shadow-[var(--glass-shadow)]' : 'text-[var(--text-muted)]'}`}
               title={t.name}
             >

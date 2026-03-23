@@ -107,9 +107,33 @@
     height: 100%;
     z-index: -1;
     pointer-events: none;
-    opacity: 0.5;
+    opacity: 0.15;
     background-image: url('data:image/svg+xml,<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"><filter id="noiseFilter"><feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch" /></filter><rect width="100%" height="100%" filter="url(%23noiseFilter)" /></svg>');
     mix-blend-mode: overlay;
+  }
+
+  .bg-fine-grain {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    pointer-events: none;
+    opacity: 0.15;
+    background-image: url('data:image/svg+xml,<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"><filter id="fineGrain"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="4" stitchTiles="stitch" /></filter><rect width="100%" height="100%" filter="url(%23fineGrain)" /></svg>');
+    mix-blend-mode: overlay;
+  }
+
+  .bg-dark-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    pointer-events: none;
+    background: rgba(0, 0, 0, 0.45);
   }
 }
 
