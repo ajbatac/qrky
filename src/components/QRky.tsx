@@ -612,7 +612,7 @@ const QRky: React.FC = () => {
         <div className="absolute inset-0 pointer-events-none">
             {/* Data Input Node */}
             <DraggableNode 
-              initialPos={{ top: '20%', left: '20%' }}
+              initialPos={{ top: 'calc(50% - 160px)', left: 'calc(50% - 270px)' }}
               onClick={() => togglePanel('encode')}
             >
                 <button 
@@ -626,7 +626,7 @@ const QRky: React.FC = () => {
 
             {/* Customize Node */}
             <DraggableNode 
-              initialPos={{ top: '80%', left: '20%' }}
+              initialPos={{ top: 'calc(50% + 160px)', left: 'calc(50% - 270px)' }}
               onClick={() => togglePanel('customize')}
             >
                 <button 
@@ -640,7 +640,7 @@ const QRky: React.FC = () => {
 
             {/* Generate Node (Status) */}
             <DraggableNode 
-              initialPos={{ top: '20%', left: '80%' }}
+              initialPos={{ top: 'calc(50% - 160px)', left: 'calc(50% + 270px)' }}
               onClick={() => togglePanel('decode')}
             >
                 <button 
@@ -654,7 +654,7 @@ const QRky: React.FC = () => {
 
             {/* Download Node */}
             <DraggableNode 
-              initialPos={{ top: '80%', left: '80%' }}
+              initialPos={{ top: 'calc(50% + 160px)', left: 'calc(50% + 270px)' }}
               onClick={() => togglePanel('download')}
             >
                 <button 
