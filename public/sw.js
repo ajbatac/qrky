@@ -9,6 +9,8 @@ const CACHE_NAME = `qrky-${CACHE_VERSION}`;
 
 const STATIC_ASSETS = [
   '/manifest.webmanifest',
+  '/favicon.svg',
+  '/favicon.ico',
   '/icons-192.png',
   '/icons-512.png',
   '/qrky-logo-small.png',

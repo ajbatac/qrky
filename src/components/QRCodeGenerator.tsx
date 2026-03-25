@@ -105,10 +105,16 @@ const QRCodeGenerator: React.FC<QRCodeGeneratorProps> = ({ config, onGenerate })
                 // Draw a small background for the logo to separate it from the QR patterns
                 context.fillStyle = config.backgroundColor === 'transparent' ? 'white' : config.backgroundColor;
                 context.beginPath();
-                context.roundRect(xPos - 4, yPos - 4, logoSize + 8, logoSize + 8, 8);
+                context.roundRect(xPos - 4, yPos - 4, logoSize + 8, logoSize + 8, 12);
                 context.fill();
                 
+                context.save();
+                context.beginPath();
+                context.roundRect(xPos, yPos, logoSize, logoSize, 12);
+                context.clip();
                 context.drawImage(logoImg, xPos, yPos, logoSize, logoSize);
+                context.restore();
+                
                 resolve(null);
               };
               logoImg.onerror = () => resolve(null);

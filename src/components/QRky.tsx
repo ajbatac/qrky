@@ -538,7 +538,7 @@ const QRky: React.FC = () => {
       <header className="absolute top-0 left-0 w-full p-6 md:p-8 md:px-16 flex flex-col items-center z-50 gap-4 md:gap-6">
         <div className="w-full flex flex-col md:flex-row items-center justify-between gap-4 md:gap-0">
           <div className="flex items-center gap-4 md:gap-6 group cursor-pointer" onClick={() => setActivePanel(null)}>
-            <img src="/qrky-logo-small.png" alt="QRky" className="w-10 h-10 md:w-16 md:h-16 brightness-110 drop-shadow-[0_0_20px_rgba(34,197,94,0.3)] object-contain" />
+            <img src="/qrky-logo-small.png" alt="QRky" className="w-10 h-10 md:w-16 md:h-16 rounded-[12px] brightness-110 drop-shadow-[0_0_20px_rgba(34,197,94,0.3)] object-contain" />
             <h1 
               className="text-4xl md:text-6xl font-black tracking-tighter leading-none transition-all duration-1000"
               style={{ 

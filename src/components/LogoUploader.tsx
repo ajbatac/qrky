@@ -43,7 +43,7 @@ const LogoUploader: React.FC<LogoUploaderProps> = ({ config, onUpdateConfig }) =
           >
             {config.logo ? (
               <div className="relative">
-                <img src={config.logo} alt="Logo Preview" className="w-12 h-12 rounded-lg object-contain" />
+                <img src={config.logo} alt="Logo Preview" className="w-12 h-12 rounded-[12px] object-contain" />
                 <button 
                   onClick={(e) => { e.preventDefault(); onUpdateConfig({ logo: undefined }); }}
                   className="absolute -top-1 -right-1 bg-red-500 rounded-full w-5 h-5 flex items-center justify-center shadow-lg transform scale-0 group-hover:scale-100 transition-transform"
